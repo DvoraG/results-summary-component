@@ -1,0 +1,234 @@
+/* FONTS */
+/* GDPR conform use of fonts */
+@import url("./fonts.css");
+
+/* Variables */
+:root {
+  /* colors: gradients */
+  --gradient-container: linear-gradient(
+    hsl(252, 100%, 67%),
+    hsl(241, 81%, 54%)
+  );
+  --gradient-circle: linear-gradient(
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+
+  /* colors: neutral */
+  --white: hsl(0, 0%, 100%);
+  --blue-dark: hsl(224, 30%, 27%);
+
+  /* font settings */
+  --font-family: "Hanken Grotesk", sans-serif;
+  --font-weight-regular: 500;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 800;
+  --font-size: 18px;
+  --spacing: 1px;
+
+  /* margin, padding, width, height */
+  --width-mobile: 375px;
+  --margin-center: 0 auto;
+  --radius: 25px;
+  --shadow: 10px 10px 20px hsl(221, 100%, 96%);
+
+  /* transition */
+  --transition: all 0.3 ease-in-out;
+}
+/* Browser default reset */
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL DEFAULTS */
+html {
+  font-size: 100%;
+}
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  background: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+  font-weight: var(--font-weight-semibold);
+  text-transform: capitalize;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+/* ********************************** */
+.section-center {
+  width: var(--width-mobile);
+  margin: var(--margin-center);
+  background: var(--white);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.total-container {
+  background: var(--gradient-container);
+  text-align: center;
+  border-radius: var(--radius);
+  margin: var(--margin-center);
+  width: var(--width-mobile);
+  padding: 2.5rem 2rem;
+}
+.total-container h5 {
+  color: hsla(222, 100%, 96%, 0.7);
+  letter-spacing: var(--spacing);
+  margin-bottom: 2.5rem;
+}
+.circle {
+  background: var(--gradient-circle);
+  width: 200px;
+  height: 200px;
+  margin: var(--margin-center);
+  border-radius: 50%;
+  padding-top: 3rem;
+}
+.circle h1 {
+  color: var(--white);
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+}
+.circle span,
+.total-info p {
+  color: hsla(222, 100%, 96%, 0.4);
+}
+.total-info {
+  padding: 0.75rem;
+}
+.total-info h4 {
+  margin: 0.75rem 0;
+  letter-spacing: var(--spacing);
+  color: var(--white);
+}
+.total-info p {
+  line-height: 1.4;
+}
+.summary-container {
+  margin: var(--margin-center);
+  width: var(--width-mobile);
+  padding: 1.5rem;
+}
+.summary-container h5 {
+  color: var(--blue-dark);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--spacing);
+  margin-bottom: 2rem;
+}
+
+.test-units article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.test-unit {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.reaction {
+  background: hsla(0, 100%, 67%, 0.1);
+  color: hsl(0, 100%, 67%);
+}
+.memory {
+  background: hsla(39, 100%, 56%, 0.1);
+  color: hsl(39, 100%, 56%);
+}
+.verbal {
+  background: hsla(166, 100%, 37%, 0.1);
+  color: hsl(166, 100%, 37%);
+}
+.visual {
+  background: hsla(234, 85%, 45%, 0.1);
+  color: hsl(234, 85%, 45%);
+}
+
+.test-result span {
+  color: var(--blue-dark);
+  font-weight: var(--font-weight-semibold);
+}
+.test-result .total {
+  color: hsla(224, 30%, 27%, 0.5);
+}
+.continue-btn {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--blue-dark);
+  border: 2px solid var(--blue-dark);
+  border-radius: 5rem;
+  text-transform: capitalize;
+  padding: 1rem 3rem;
+  width: 100%;
+  display: inline-block;
+  transition: var(--transition);
+}
+.continue-btn:hover {
+  background: hsla(241, 81%, 54%, 0.502);
+  border: transparent;
+  padding: 1.125rem 0;
+  color: hsla(241, 81%, 54%, 0.5);
+}
+.continue-btn:active {
+  border-color: hsl(241, 81%, 54%);
+  background: hsl(241, 81%, 54%);
+  color: var(--white);
+}
+@media screen and (min-width: 768px) {
+  section {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+  }
+  .section-center {
+    display: flex;
+    width: 750px;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    border-bottom-left-radius: 0;
+  }
+  .total-container {
+    padding: 2.5rem 3rem;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
